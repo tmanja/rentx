@@ -16,4 +16,8 @@ export class CategoriesRepository {
     const category = new Category(name, description);
     this.categories = [category, ...this.categories];
   }
+
+  listAll(): Category[] {
+    return this.categories;
+  }
 }
