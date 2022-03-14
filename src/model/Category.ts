@@ -6,7 +6,7 @@ export class Category {
   description: string;
   created_at: Date;
 
-  constructor(name, description) {
+  constructor(name: string, description: string) {
     this.id = uuidV4();
     this.name = name;
     this.description = description;
