@@ -13,7 +13,7 @@ export class CategoriesRepository implements ICategoriesRepository {
 
   create({ name, description }: ICreateCategoryDTO): void {
     const category = new Category(name, description);
-    this.categories = [category, ...this.categories];
+    this.categories.push(category);
   }
 
   listAll(): Category[] {
