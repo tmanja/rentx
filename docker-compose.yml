@@ -1,5 +1,16 @@
 version: "3"
 services:
+  db:
+    image: postgres
+    container_name: db
+    ports:
+      - 5432:5432
+    environment: 
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=rentx
+    volumes:
+      - pgdata:/var/lib/postgresql/data/
   app:
     build: .
     container_name: rentx
@@ -7,3 +18,9 @@ services:
       - "3333:3333"
     volumes:
       - .:/home/node/app
+    links:
+      - "db"
+volumes:
+  pgdata:
+    driver: local
+    
