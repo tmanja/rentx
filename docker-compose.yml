@@ -6,11 +6,11 @@ services:
     ports:
       - 5432:5432
     environment: 
-      - POSTGRES_USER=admin
       - POSTGRES_PASSWORD=admin
-      - POSTGRES_DB=rentx
+      - POSTGRES_USER=admin
     volumes:
       - pgdata:/var/lib/postgresql/data/
+    network_mode: host
   app:
     build: .
     container_name: rentx
@@ -18,9 +18,7 @@ services:
       - "3333:3333"
     volumes:
       - .:/home/node/app
-    links:
-      - "db"
+    network_mode: host
 volumes:
   pgdata:
-    driver: local
     
