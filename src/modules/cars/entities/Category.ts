@@ -15,10 +15,7 @@ export class Category {
   @CreateDateColumn()
   created_at: Date;
 
-  constructor(name: string, description: string) {
+  constructor() {
     this.id = uuidV4();
-    this.name = name;
-    this.description = description;
-    this.created_at = new Date();
   }
 }

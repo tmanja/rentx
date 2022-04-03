@@ -9,7 +9,7 @@ export class CreateCategories1647494639228 implements MigrationInterface {
           { name: "id", type: "uuid", isPrimary: true },
           { name: "name", type: "varchar" },
           { name: "description", type: "varchar" },
-          { name: "craeted_at", type: "timestamp", default: "now()" },
+          { name: "created_at", type: "timestamp", default: "now()" },
         ],
       })
     );
